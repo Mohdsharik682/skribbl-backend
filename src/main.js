@@ -48,7 +48,7 @@ socket.on('join_room', (payload, callback) => {
         console.log("Available rooms:", [
             ...sessionEngine.activeSessions.keys()
         ]);
-
+        
         const session = sessionEngine.fetchSession(roomId);
 
         if (!session) {
