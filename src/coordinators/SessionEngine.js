@@ -13,9 +13,16 @@ class SessionEngine {
         return newSession;
     }
 
-    fetchSession(sessionId) {
-        return this.activeSessions.get(sessionId);
-    }
+    // fetchSession(sessionId) {
+    //     return this.activeSessions.get(sessionId);
+    // }
+    
+     fetchSession(sessionId) {
+     const normalizedId = String(sessionId || '').trim().toLowerCase();
+     return this.activeSessions.get(normalizedId);
+     }
+
+
 
     terminateSession(sessionId) {
         this.activeSessions.delete(sessionId);
